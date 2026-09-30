@@ -1,0 +1,61 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "build": {
+      "prompt": "{file:C:\\Users\\jiabo\\Documents\\GitHub\\DongSheng-jiabo-11\\.claudian\\opencode\\prompts\\main.md}"
+    },
+    "claudian-yolo": {
+      "mode": "primary",
+      "permission": {
+        "*": "allow",
+        "plan_enter": "deny",
+        "question": "allow"
+      },
+      "prompt": "{file:C:\\Users\\jiabo\\Documents\\GitHub\\DongSheng-jiabo-11\\.claudian\\opencode\\prompts\\main.md}"
+    },
+    "claudian-safe": {
+      "mode": "primary",
+      "permission": {
+        "plan_enter": "deny",
+        "question": "allow",
+        "bash": "ask",
+        "edit": "ask"
+      },
+      "prompt": "{file:C:\\Users\\jiabo\\Documents\\GitHub\\DongSheng-jiabo-11\\.claudian\\opencode\\prompts\\main.md}"
+    },
+    "claudian-inline-edit": {
+      "description": "Claudian read-only execution agent.",
+      "mode": "primary",
+      "permission": {
+        "*": "deny",
+        "codesearch": "allow",
+        "external_directory": "deny",
+        "glob": "allow",
+        "grep": "allow",
+        "lsp": "allow",
+        "read": {
+          "*": "allow",
+          "*.env": "deny",
+          "*.env.*": "deny",
+          "*.env.example": "allow"
+        },
+        "webfetch": "allow",
+        "websearch": "allow"
+      },
+      "prompt": "{file:C:\\Users\\jiabo\\Documents\\GitHub\\DongSheng-jiabo-11\\.claudian\\opencode\\prompts\\inline-edit.md}"
+    },
+    "claudian-title": {
+      "description": "Claudian passive execution agent.",
+      "mode": "primary",
+      "permission": {
+        "*": "deny",
+        "external_directory": "deny"
+      },
+      "prompt": "{file:C:\\Users\\jiabo\\Documents\\GitHub\\DongSheng-jiabo-11\\.claudian\\opencode\\prompts\\title.md}"
+    },
+    "plan": {
+      "disable": true
+    }
+  },
+  "default_agent": "claudian-safe"
+}
